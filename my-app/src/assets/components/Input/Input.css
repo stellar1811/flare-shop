@@ -1,0 +1,18 @@
+.custom-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 50px;
+  margin-bottom: 20px;
+  position: relative; 
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}

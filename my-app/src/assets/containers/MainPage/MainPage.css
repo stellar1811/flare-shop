@@ -1,0 +1,28 @@
+.main-page {
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  background-color: white;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.password-input-wrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input {
+  width: calc(100% - 40px); 
+  padding-right: 40px; 
+}
+
