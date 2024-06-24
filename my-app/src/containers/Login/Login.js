@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import './MainPage.css';
-import Card from '../components/Card/Card';
+import './Login.css';
+import Card from './components/Card/Card';
 import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
-import FormIcon from './FormIcon/FormIcon';
+import formIcon from '../../assets/FormIcon.png';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
 
 const MainPage = () => {
@@ -27,7 +27,7 @@ const MainPage = () => {
     <div className="main-page">
       <Card>
         <div className='title'>
-          <FormIcon />
+          <img src={formIcon} alt="Form Icon" className="form-icon" />
           <h1>Flare</h1>
         </div>
         <Input
