@@ -1,0 +1,29 @@
+.preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 10px;
+}
+  
+.top-section {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.form-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+}
+
+.products-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 20px;
+}
