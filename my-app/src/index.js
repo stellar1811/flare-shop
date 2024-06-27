@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
-import Preview from './containers/Preview/Preview';
+// import Preview from './containers/Preview/Preview';
+import Login from './containers/Login/Login';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Preview />
+    <Login />
   </React.StrictMode>
 );
