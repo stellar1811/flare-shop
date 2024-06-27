@@ -1,15 +1,27 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import ProductsButton from '../../components/ProductsButton/ProductsButton';
 import { IoMdPerson, IoMdAdd } from 'react-icons/io';
 import formIcon from '../../assets/FormIcon.png';
 import './Products.css';
 import Table from '../../components/Table/Table';
+import {API_URL} from  '../../constants';
 
 const Products = () => {
-    const products = [
-        { category: 'Clothing', name: 'Skirt', quantity: 10, price: '$150' },
-        { category: 'Clothing', name: 'Blouse', quantity: 5, price: '$50' },
-        { category: 'Clothing', name: 'Dress', quantity: 3, price: '$75' },
-    ];
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const response = await axios.get(`${API_URL}/api/v1/products`);
+                setProducts(response.data);
+            } catch (error) {
+                console.error('Error fetching products:', error);
+            }
+        };
+
+        fetchProducts();
+    }, []);
 
     return (
         <div className="products">
