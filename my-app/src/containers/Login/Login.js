@@ -108,7 +108,7 @@ const Login = () => {
         {loginError && <div className="error-message">{loginError}</div>}
         {successMessage && <div className="success-message">{successMessage}</div>}
         
-        <Link to="/todolist">
+        <Link to="/products">
           <Button className='submit-button' label="Submit" onClick={handleSubmit} />
         </Link>
         
