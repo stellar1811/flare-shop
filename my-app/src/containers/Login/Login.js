@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
 import './Login.css';
 import Card from './components/Card/Card';
 import Input from '../../components/Input/Input';
@@ -7,6 +8,7 @@ import formIcon from '../../assets/FormIcon.png';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false); 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -50,6 +52,7 @@ const Login = () => {
     setSuccessMessage('Logged in successfully!');
 
     localStorage.setItem('token', 'fake-token');
+    navigate('/products');
   };
 
   return (
@@ -104,7 +107,11 @@ const Login = () => {
         </div>
         {loginError && <div className="error-message">{loginError}</div>}
         {successMessage && <div className="success-message">{successMessage}</div>}
-        <Button label="Submit" onClick={handleSubmit} />
+        
+        <Link to="/todolist">
+          <Button className='submit-button' label="Submit" onClick={handleSubmit} />
+        </Link>
+        
       </Card>
     </div>
   );
