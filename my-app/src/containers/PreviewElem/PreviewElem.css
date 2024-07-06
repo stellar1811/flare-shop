@@ -1,0 +1,17 @@
+.product-image {
+    width: 400px; 
+    height: auto; 
+    float: left;
+}
+
+.PreviewElem-container{
+    padding: 50px;
+}
+
+.desc{
+    text-align: justify;
+}
+
+.arrow{
+    cursor: pointer;
+}
