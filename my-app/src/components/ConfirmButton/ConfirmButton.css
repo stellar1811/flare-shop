@@ -1,0 +1,13 @@
+.confirm-button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .confirm-button.delete {
+    background-color: red; 
+    color: white; 
+  }

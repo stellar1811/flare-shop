@@ -8,18 +8,20 @@ const PreviewElem = () => {
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const response = await fetch(`${API_URL}/api/v1/products/${productId}`);
-        const data = await response.json();
-        setProduct(data);
-      } catch (error) {
-        console.error('Error fetching product:', error);
-      }
-    };
-
-    fetchProduct();
+    fetchProduct(productId);
   }, [productId]);
+
+  const fetchProduct = async () => {
+    try {
+      const response = await fetch(`${API_URL}/api/v1/products/${productId}`);
+      const data = await response.json();
+      setProduct(data);
+    } catch (error) {
+      console.error('Error fetching product:', error);
+    }
+  };
+
+
 
   if (!product) {
     return <div>Loading...</div>;

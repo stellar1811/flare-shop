@@ -35,6 +35,15 @@ const Products = () => {
     navigate('/preview');
   };
 
+  const handleDeleteProduct = async (product) => {
+    try {
+      await axios.delete(`${API_URL}/api/v1/products/${product.id}`);
+      setProducts(products.filter(p => p.id !== product.id));
+    } catch (error) {
+      console.error('Error deleting product:', error);
+    }
+  };
+
   return (
     <div className="products">
       <div className='title'>
@@ -56,7 +65,7 @@ const Products = () => {
       </div>
       <h1>Products</h1>
       <div className='table-container'>
-        <Table products={products} />
+        <Table products={products} onDelete={handleDeleteProduct} />
       </div>
     </div>
   );
