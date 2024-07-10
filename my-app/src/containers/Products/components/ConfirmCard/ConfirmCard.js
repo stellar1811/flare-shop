@@ -7,7 +7,7 @@ const ConfirmCard = ({ message, onCancel, onConfirm }) => (
     <div className="confirm-card">
       <p>{message}</p>
       <ConfirmButton label="Cancel" onClick={onCancel} type="cancel" />
-      <ConfirmButton label="Delete" onClick={onConfirm} type="delete" />
+      <ConfirmButton className="delete" label="Delete" onClick={onConfirm} type="delete" />
     </div>
   </div>
 );
