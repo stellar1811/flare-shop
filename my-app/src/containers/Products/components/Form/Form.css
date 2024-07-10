@@ -1,0 +1,58 @@
+.form-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    max-width: 90%;
+  }
+  
+  .form-content h2 {
+    margin-bottom: 20px;
+  }
+  
+  .form-content label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .form-content input,
+  .form-content textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .form-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-buttons button:first-child {
+    background-color: #ccc;
+    color: #000;
+  }
+  
+  .form-buttons button:last-child {
+    background-color: #ed822b;
+    color: #fff;
+  }

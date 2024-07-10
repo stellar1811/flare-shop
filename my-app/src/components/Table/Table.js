@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Table.css';
 import { IoMdCreate, IoMdTrash } from 'react-icons/io';
-import ConfirmCard from '../../containers/Products/components/ConfirmCard/ConfirmCard'; 
+import ConfirmCard from '../../containers/Products/components/ConfirmCard/ConfirmCard';
 
-const Table = ({ products, onDelete }) => {
+const Table = ({ products, onDelete, onEdit }) => {
   const [showConfirm, setShowConfirm] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -45,7 +45,7 @@ const Table = ({ products, onDelete }) => {
               <td>{product.quantity}</td>
               <td>{product.price}</td>
               <td className="actions">
-                <IoMdCreate className="icon edit-icon" />
+                <IoMdCreate className="icon edit-icon" onClick={() => onEdit(product)} />
                 <IoMdTrash className="icon delete-icon" onClick={() => handleDeleteClick(product)} />
               </td>
             </tr>
