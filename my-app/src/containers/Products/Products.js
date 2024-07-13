@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductsButton from '../../components/ProductsButton/ProductsButton';
 import { IoMdPerson, IoMdAdd } from 'react-icons/io';
@@ -65,6 +65,16 @@ const Products = () => {
     setSelectedProduct(null);
   };
 
+  const handleFormSubmit = async () => {
+    setShowForm(false);
+    setSelectedProduct(null);
+    try {
+      const response = await axios.get(`${API_URL}/api/v1/products`);
+      setProducts(response.data);
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    }
+  };
 
   return (
     <div className="products">
@@ -95,6 +105,7 @@ const Products = () => {
           title={formTitle}
           product={selectedProduct}
           onCancel={handleFormCancel}
+          onFormSubmit={handleFormSubmit}
         />
       )}
     </div>
