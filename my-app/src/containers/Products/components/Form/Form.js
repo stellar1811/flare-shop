@@ -39,10 +39,14 @@ const Form = ({ title, product, onCancel, onFormSubmit }) => {
     }
 
     try {
+      const formattedFormData = {
+        ...formData,
+        price: `$${formData.price}`,
+      };
       if (product) {
-        await axios.put(`${API_URL}/api/v1/products/${product.id}`, formData);
+        await axios.put(`${API_URL}/api/v1/products/${product.id}`, formattedFormData);
       } else {
-        await axios.post(`${API_URL}/api/v1/products`, formData);
+        await axios.post(`${API_URL}/api/v1/products`, formattedFormData);
       }
       onFormSubmit();
     } catch (error) {
